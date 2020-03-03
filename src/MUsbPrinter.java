@@ -1,3 +1,21 @@
+package br.com.plugimpre.musbprinter;
+
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Context;
+import android.hardware.usb.UsbDevice;
+import android.hardware.usb.UsbManager;
+
+import java.util.Map;
+
+import com.tx.printlib.Const;
+import com.tx.printlib.UsbPrinter;
+
 public class MUsbPrinter extends CordovaPlugin {
     private UsbPrinter mUsbPrinter;
     private CallbackContext callbackContext;
