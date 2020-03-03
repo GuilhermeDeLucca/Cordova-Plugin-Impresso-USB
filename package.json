@@ -1,0 +1,17 @@
+{
+  "name": "br.com.plugimpre",
+  "version": "1.0.0",
+  "description": "\r\n        Impressora incorporada Android\r\n    ",
+  "cordova": {
+    "id": "br.com.plugimpre",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Guilherme De Lucca",
+  "license": "ISC"
+}

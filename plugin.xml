@@ -1,0 +1,31 @@
+<plugin id="br.com.plugimpre" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>musbprinter</name>
+    <description>
+        Impressora incorporada Android
+    </description>
+    <!-- js Ligar -->
+    <js-module name="MUsbPrinter" src="www/musbprinter.js">
+        <clobbers target="MUsbPrinter" />
+    </js-module>
+    <!-- android -->
+    <platform name="android">
+        <!-- arr referência -->
+        <resource-file src="src/printlib.aar" target="libs/printlib.aar" />
+        <framework src="src/printlib.gradle" custom="true" type="gradleReference" />
+        <!-- Designação de Classe Executiva -->
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MUsbPrinter">
+                <param name="android-package" value="br.com.plugimpre.musbprinter.MUsbPrinter"/>
+            </feature>
+        </config-file>
+        <!-- Permissões necessárias do Android -->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-feature android:name="android.hardware.usb.host" android:required="false" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+        </config-file>
+        <source-file src="src/MUsbPrinter.java" target-dir="src/br/com/plugimpre/musbprinter/" />
+    </platform>
+</plugin>
